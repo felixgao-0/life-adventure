@@ -15,7 +15,7 @@ function makeBlood(pos, amt) {
     }
         
     update() {
-        if (this.isDead())
+        if (this.isDead)
             return super.update();
     
         const moveInput = this.moveInput.copy();
@@ -36,13 +36,13 @@ function makeBlood(pos, amt) {
     }
            
     render() {
-        const animationFrame = this.isDead() ? 0 :
+        const animationFrame = this.isDead ? 0 :
             this.climbingLadder || this.groundTimer.active() ?
             2*this.walkCyclePercent|0 : 1;
         this.tileInfo = spriteAtlas.player.frame(animationFrame);
 
         let bodyPos = this.pos;
-        if (!this.isDead()) {
+        if (!this.isDead) {
             bodyPos = bodyPos.add(vec2(0,.05*Math.sin(this.walkCyclePercent*PI)));
             bodyPos = bodyPos.add(vec2(0,(this.drawSize.y-this.size.y)/2));
         }
@@ -50,7 +50,7 @@ function makeBlood(pos, amt) {
     }
     
     damage(damage, perpetrator) {
-        if (this.isDead() || this.getAliveTime() < 1 || this.dodgeTimer.active()) {
+        if (this.isDead || this.getAliveTime() < 1 || this.dodgeTimer.active()) {
             return 0;
         }
     
@@ -59,7 +59,7 @@ function makeBlood(pos, amt) {
     }
     
     kill(perpetrator) {
-        if (this.isDead()) { // kill a dead person, yes!!!
+        if (this.isDead) { // kill a dead person, yes!!!
             return;
         }
     
