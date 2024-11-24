@@ -1,5 +1,3 @@
-const { keyWasPressed } = require("littlejsengine");
-
 function gameInit()
 {
     // called once after the engine starts up
@@ -15,13 +13,13 @@ function gameUpdate()
 
     // Keybinds for movement - WASD
     if (keyWasPressed(87)) { // W
-        alert("W")
+        console.log("W")
     } else if (keyWasPressed(65)) { // A
-        alert("A")
+        console.log("A")
     } else if (keyWasPressed(83)) { // S
-        alert("S")
+        console.log("S")
     } else if (keyWasPressed(68)) { // D
-        alert("D")
+        console.log("D")
     }
 }
 
