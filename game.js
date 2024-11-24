@@ -1,9 +1,10 @@
+let gameLevel = 1;
+
 function gameInit()
 {
     // called once after the engine starts up
     // setup the game
-
-    gameLevel = 1;
+    player = new Player(vec2(2,2));
 }
 
 function gameUpdate()
@@ -12,14 +13,8 @@ function gameUpdate()
     // handle input and update the game state
 
     // Keybinds for movement - WASD
-    if (keyWasPressed("W")) { // W
-        drawTextScreen("W", vec2(mainCanvasSize.x/2, 70), 50);
-    } else if (keyWasPressed("A")) { // A
-        drawTextScreen("A", vec2(mainCanvasSize.x/2, 70), 50);
-    } else if (keyWasPressed("S")) { // S
-        drawTextScreen("S", vec2(mainCanvasSize.x/2, 70), 50);
-    } else if (keyWasPressed("D")) { // D
-        drawTextScreen("D", vec2(mainCanvasSize.x/2, 70), 50);
+    if (player.dead) {
+        player.velocity = vec2(0,.1);
     }
 }
 
