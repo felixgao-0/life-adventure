@@ -26,10 +26,15 @@ function gameUpdate() {
     }
 }
 
-function gameUpdatePost()
-{
+function gameUpdatePost() {
     // called after physics and objects are updated
     // setup camera and prepare for render
+    /*function getCameraTarget() {
+        // camera is above player
+        const offset = 200/cameraScale*percent(mainCanvasSize.y, 300, 600);
+        return player.pos.add(vec2(0, offset));
+    }
+    cameraPos = cameraPos.lerp(getCameraTarget(), clamp(player.getAliveTime()/2))*/
 }
 
 function gameRender()
@@ -42,7 +47,17 @@ function gameRenderPost()
 {
     // called after objects are rendered
     // draw effects or hud that appear above all objects
+    /*function drawText(text, x, y, size=40) {
+        overlayContext.textAlign = 'center';
+        overlayContext.textBaseline = 'top';
+        overlayContext.font = size + 'px arial';
+        overlayContext.fillStyle = '#fff';
+        overlayContext.lineWidth = 3;
+        overlayContext.strokeText(text, x, y);
+        overlayContext.fillText(text, x, y);
+    }
 
+    drawText("Test");*/
 }
 
 // Startup LittleJS Engine
