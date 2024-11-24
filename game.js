@@ -8,7 +8,7 @@ let player;
 function gameInit() {
     // called once after the engine starts up
     // setup the game
-    player = new Player(vec2(2,2));
+    player = new Character(vec2(2,2));
     score = 0;
     gameLevel = 1;
 }
