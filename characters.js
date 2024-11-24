@@ -20,13 +20,6 @@ function makeBlood(pos, amt) {
     
         const moveInput = this.moveInput.copy();
 
-        if (!this.holdingJump)
-        this.pressedJumpTimer.unset();
-        else if (!this.wasHoldingJump || this.climbingWall) {
-                this.pressedJumpTimer.set(.3);
-                this.wasHoldingJump = this.holdingJump;
-        }
-
         const charSpeedLimit = .15;
         this.velocity.x = clamp(this.velocity.x + moveInput.x * .042, -charSpeedLimit, charSpeedLimit);
     
