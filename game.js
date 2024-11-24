@@ -1,3 +1,5 @@
+const { cameraPos } = require("littlejsengine");
+
 let gameLevel = 1;
 let score = 0;
 
@@ -22,6 +24,12 @@ function gameUpdate() {
 
 function gameUpdatePost()
 {
+    function getCameraTarget() {
+        // camera is above player
+        const offset = 200/cameraScale*percent(mainCanvasSize.y, 300, 600);
+        return player.pos.add(vec2(0, offset));
+    }
+    cameraPos = cameraPos.lerp(getCameraTarget(), clamp(player.getAliveTime()/2))
     // called after physics and objects are updated
     // setup camera and prepare for render
 }
