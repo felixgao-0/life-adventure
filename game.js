@@ -13,13 +13,13 @@ function gameUpdate()
 
     // Keybinds for movement - WASD
     if (keyWasPressed("W")) { // W
-        console.log("W")
+        drawTextScreen("W", vec2(mainCanvasSize.x/2, 70), 50);
     } else if (keyWasPressed("A")) { // A
-        console.log("A")
+        drawTextScreen("A", vec2(mainCanvasSize.x/2, 70), 50);
     } else if (keyWasPressed("S")) { // S
-        console.log("S")
+        drawTextScreen("S", vec2(mainCanvasSize.x/2, 70), 50);
     } else if (keyWasPressed("D")) { // D
-        console.log("D")
+        drawTextScreen("D", vec2(mainCanvasSize.x/2, 70), 50);
     }
 }
 
