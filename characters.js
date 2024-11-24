@@ -29,11 +29,6 @@ function makeBlood(pos, amt) {
     }
            
     render() {
-        const animationFrame = this.isDead ? 0 :
-            this.climbingLadder || this.groundTimer.active() ?
-            2*this.walkCyclePercent|0 : 1;
-        this.tileInfo = spriteAtlas.player.frame(animationFrame);
-
         let bodyPos = this.pos;
         if (!this.isDead) {
             bodyPos = bodyPos.add(vec2(0,.05*Math.sin(this.walkCyclePercent*PI)));
