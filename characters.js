@@ -76,7 +76,7 @@ function makeBlood(pos, amt) {
     }
 }
 
- export class Player extends EngineObject {
+ export class Player extends Character {
     update() {
         // player controls
         this.holdingJump = keyIsDown('ArrowUp') || gamepadIsDown(0);
