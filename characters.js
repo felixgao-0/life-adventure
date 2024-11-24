@@ -1,8 +1,10 @@
+
 function makeBlood(pos, amt) {
     makeDebris(pos, hsl(0,1,.5), amt, .1, 0);
 }
 
-class Character extends GameObject {
+
+ export class Character extends EngineObject {
     constructor(pos) { 
         super(pos, vec2(.6,.95), tile());
         this.drawSize = vec2(1);
@@ -74,7 +76,7 @@ class Character extends GameObject {
     }
 }
 
-class Player extends Character {
+ export class Player extends EngineObject {
     update() {
         // player controls
         this.holdingJump = keyIsDown('ArrowUp') || gamepadIsDown(0);
