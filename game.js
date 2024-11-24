@@ -1,20 +1,22 @@
 let gameLevel = 1;
+let score = 0;
 
 function gameInit()
 {
     // called once after the engine starts up
     // setup the game
     player = new Player(vec2(2,2));
+    score = 0;
+    gameLevel = 1;
 }
 
-function gameUpdate()
-{
+function gameUpdate() {
     // called every frame at 60 frames per second
     // handle input and update the game state
 
-    // Keybinds for movement - WASD
-    if (player.dead) {
+    if (player.dead) { // revive player
         player.velocity = vec2(0,.1);
+        player.dead = false;
     }
 }
 

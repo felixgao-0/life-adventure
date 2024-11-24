@@ -9,7 +9,7 @@ class Character extends GameObject {
         this.color = hsl(rand(),1,.7);
         this.health = 100;
         this.setCollision(true,false);
-        this.dead = false;
+        this.dead = true;
     }
         
     update() {
@@ -57,7 +57,7 @@ class Character extends GameObject {
     }
     
     kill(perpetrator) {
-        if (this.isDead()) { // kill a dead place, yes!!!
+        if (this.isDead()) { // kill a dead person, yes!!!
             return;
         }
     
