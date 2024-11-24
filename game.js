@@ -12,13 +12,13 @@ function gameUpdate()
     // handle input and update the game state
 
     // Keybinds for movement - WASD
-    if (keyWasPressed(87)) { // W
+    if (keyWasPressed("W")) { // W
         console.log("W")
-    } else if (keyWasPressed(65)) { // A
+    } else if (keyWasPressed("A")) { // A
         console.log("A")
-    } else if (keyWasPressed(83)) { // S
+    } else if (keyWasPressed("S")) { // S
         console.log("S")
-    } else if (keyWasPressed(68)) { // D
+    } else if (keyWasPressed("D")) { // D
         console.log("D")
     }
 }
